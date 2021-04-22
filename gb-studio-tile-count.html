@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <script type="text/javascript" src="script.js"></script>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="content">
+      <div id="container" class="share">
+        <div id="canvas">
+          <div class="square red">
+            <canvas width="256" height="256"></canvas>
+            <canvas id="heatmap" width="256" height="256"></canvas>
+            <canvas id="grid" width="512" height="512"></canvas>
+          </div>
+        </div>
+      </div>
+      <div id="info">
+        <label for="unique-tiles">Unique Tiles:</label>
+        <input id="unique-tiles"/>
+        <label for="width">Width:</label>
+        <input id="width"/>
+        <label for="height">Height:</label>
+        <input id="height"/>
+      </div>
+      <div id="tiles-container">
+        <input id="tile-heatmap" checked type="checkbox"/>
+        <label for="tile-heatmap">Heatmap</label>
+        <div id="tiles">
+      </div>  
+      </div>
+    </div>
+    <input type="file" id="input" multiple style="display:none">
+  </body>
+  <script>
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+      canvas.init();
+    } else {
+      alert("The File APIs are not fully supported in this browser.");
+    }
+  </script>
+
+  <html></html>
+</html>
