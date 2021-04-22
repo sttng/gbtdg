@@ -1,0 +1,255 @@
+@font-face {
+  font-family: "PKMN";
+  src: url("https://cdn.glitch.com/a32089fa-641e-449e-9474-2b95d6924af9%2FPKMN.TTF?v=1588787010336");
+  font-weight: normal;
+  font-style: normal;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: #eaeaea;
+  font-family: "PKMN", arial;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+button {
+  border: 1px solid #42adc7;
+  background-color: #4cc5e3;
+  color: #ffffff;
+  border-radius: 15px;
+  height: 30px;
+  padding: 7px 15px;
+  font-size: 12px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #42adc7;
+}
+
+#content {
+  width: 100%;
+  align-content: center;
+}
+
+#toolbar {
+  background-color: black;
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  padding-left: 10px;
+}
+#toolbar .navigation {
+  color: white;
+  font-size: 13px;
+  margin: 15px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+#toolbar .navigation span {
+  padding: 0 5px;
+}
+#toolbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bolder;
+  transition-property: all;
+  transition-duration: 0.2s;
+}
+#toolbar a:hover {
+  color: grey;
+}
+
+#container {
+  padding: 40px 65px 50px 60px;
+  background-color: grey;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  /*width: 800px;
+  height: 800px;*/
+  margin: 80px 20px;
+  border-radius: 5px 5px 50px 5px;
+  transform-origin: top;
+  box-sizing: content-box;
+}
+#container.share {
+  width: 512px;
+  height: 512px;
+}
+#container.tweet.portrait-ratio {
+  width: 828px;
+  height: 1012px;
+}
+
+#container.tweet.landscape-ratio {
+  width: 1012px;
+  height: 828px;
+}
+
+#container.tweet.square-ratio {
+  width: 828px;
+  height: 828px;
+}
+
+#canvas {
+  background-color: white;
+  position: relative;
+}
+.square {
+  position: absolute;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+.square[data-img-url] {
+  cursor: pointer;
+}
+.square canvas {
+  width: 512px;
+  height: 512px;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
+canvas#grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+canvas#heatmap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+}
+.red {
+  background: url("https://cdn.glitch.com/a32089fa-641e-449e-9474-2b95d6924af9%2Fdrop-image.png?v=1602269942978");
+  background-size: cover;
+  background-color: #071821;
+  top: 0;
+  left: 0;
+  width: 512px;
+  height: 512px;
+  overflow: scroll;  
+}
+.square::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  box-shadow: none;
+  transition-property: all;
+  transition-duration: 0.2s;
+}
+.hover::after {
+  box-shadow: inset 0px 0px 20px 4px #fff;
+}
+#info {
+  padding: 10px;
+  background-color: #aaaaaa;
+  position: absolute;
+  margin: 80px 680px;
+  font-size: .8em;
+  max-width: 160px;
+}
+
+#tiles-container {
+  position: absolute;
+  background-color: #aaaaaa;
+  margin: 224px 680px;
+  width: 160px;  
+  font-size: .8em;
+}
+#tiles {
+  position: relative;
+  min-height: 500px;
+  max-height: 500px;
+  overflow: scroll;
+}
+#tiles span {
+  pointer-events: none;
+  position: relative;
+  display: inline-block;
+}
+#tiles span[data-selected="true"]::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  box-shadow: inset 2px 2px 2px blue, 
+              inset -2px -2px 2px blue;
+  border: 1px solid blue;
+}
+#tiles canvas {
+  pointer-events: auto;
+  height: 32;
+  width: 32;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  border: 1px solid grey;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-container {
+  margin: 30px auto;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+  width: 600px;
+  height: 500px;
+  box-sizing: content-box;
+}
+.modal-content {
+  height: 450px;
+}
+.modal-toolbar {
+  float: right;
+}
+.hidden {
+  visibility: hidden;
+}
+
+
+
+.title-input {
+  border: 0;
+  background: transparent;
+  font-size: 20px;
+  color: white;
+  font-weight: bolder;
+  padding: 5px;
+}
+.title-input:focus {
+  color: black;
+  background-color: white;
+}
