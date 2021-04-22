@@ -1,12 +1,19 @@
 <html>
 <head>
 <title>Gameboy 2BPP Graphics Format</title>
-<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="writing.css" />
 <script type="text/javascript" src="gameboy2bpp.js"></script>
 </head>
 <body>
 <div id="content">  
-    <h1>Gameboy 2BPP Graphics Format</h1> 
+    <h1>Gameboy 2BPP Graphics Format</h1>
+    
+    <p>This is a demo of the 2BPP graphics format. Enter sixteen bytes into the form. The image will change to show how a Gameboy would display the tile that is represented by those sixteen bytes.</p>
+    <div>
+    <input id="data_text" type="text" name="data" size="51" value="FF 00 7E FF 85 81 89 83 93 85 A5 8B C9 97 7E FF">
+    <input id="submit_button" type="button" value="Click to Update Gameboy Tile"><br/><br/>
+    <canvas id="demo_canvas" width="240" height="240">Your browser doesn't support the HTML5 canvas. No marching squares demo for you. :(</canvas>
+ 
     <p>The Nintendo Gameboy uses a palette of four colors. Since only four colors need to be represented in graphics data, there is a relatively straightforward and efficient way of storing this data. It's called 2BPP format, or "2 bits per pixel".</p>
     <p>The Gameboy displays its graphics using 8x8-pixel tiles. As the name 2BPP implies, it takes exactly two bits to store the information about a single pixel. There are 64 total pixels in a single tile (8x8 pixels).  Therefore, exactly 128 bits, or 16 bytes, are required to fully represent a single tile. As a result, any uncompressed graphics data present in a Gameboy ROM file is represented using exactly 16 bytes.</p>
     <p>This is an example of a single tile in <em>Pok&eacute;mon Red/Blue Version</em> (it's a window from a house):</p>
@@ -34,11 +41,6 @@
                                            00000000 -> $00
                                ........ -> 00000000 -> $00
                                            00000000 -> $00</pre>
-    <p>This is a demo of the 2BPP graphics format. Enter sixteen bytes into the form. The image will change to show how a Gameboy would display the tile that is represented by those sixteen bytes.</p>
-    <div>
-    <input id="data_text" type="text" name="data" size="51" value="FF 00 7E FF 85 81 89 83 93 85 A5 8B C9 97 7E FF">
-    <input id="submit_button" type="button" value="Click to Update Gameboy Tile"><br/><br/>
-    <canvas id="demo_canvas" width="240" height="240">Your browser doesn't support the HTML5 canvas. No marching squares demo for you. :(</canvas>
 </div>
 </body>
 </html>
