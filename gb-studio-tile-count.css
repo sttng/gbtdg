@@ -142,7 +142,7 @@ canvas#heatmap {
   opacity: 0.5;
 }
 .red {
-  background: url("https://cdn.glitch.com/a32089fa-641e-449e-9474-2b95d6924af9%2Fdrop-image.png?v=1602269942978");
+  background: url("https://raw.githubusercontent.com/sttng/gbtdg/master/gb-studio-tile-count-drop-image.png");
   background-size: cover;
   background-color: #071821;
   top: 0;
