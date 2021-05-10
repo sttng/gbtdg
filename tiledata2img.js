@@ -32,6 +32,7 @@ function refresh(canvas, rawBytes) {
 
 function decode(rawBytes) {
     var bytes = rawBytes.replace(/\$|,|0x| /g, "");
+    console.log(bytes.length % 32);
     if (bytes.length % 32 != 0) return false;
     
     var byteArray = new Array(16);
