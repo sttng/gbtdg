@@ -9,7 +9,7 @@ window.onload = function() {
     var canvas = document.getElementById("demo_canvas");
 
     button = document.getElementById("submit_button");
-    data = document.getElementById("data_text")
+    data = document.getElementById("tile_data")
 
     button.addEventListener("click", function(evt){
         refresh(canvas, data.value);
