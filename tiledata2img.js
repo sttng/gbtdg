@@ -30,6 +30,7 @@ function refresh(canvas, rawBytes) {
         } else {
             data.style.backgroundColor = "red";
         }
+        await delay(5000);
     }
 }
 
