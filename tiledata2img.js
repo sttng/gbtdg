@@ -22,17 +22,16 @@ window.onload = function() {
 function refresh(canvas, rawBytes) {
     ByteArr = splitter(rawBytes);    
     for (const pixelBytes of ByteArr){
-        pixels = decode(pixelBytes);
-        console.log(pixels);
-        if (pixels) {
-            paint(canvas, pixels);
-            data.removeAttribute("style");
-        } else {
-            data.style.backgroundColor = "red";
-        }
         setTimeout(function(){
-    console.log("I am the third log after 5 seconds");
-},5000);
+            pixels = decode(pixelBytes);
+            console.log(pixels);
+            if (pixels) {
+                paint(canvas, pixels);
+                data.removeAttribute("style");
+            } else {
+                data.style.backgroundColor = "red";
+            }
+        },5000);
     }
 }
 
