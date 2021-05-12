@@ -20,14 +20,16 @@ window.onload = function() {
 }
 
 function refresh(canvas, rawBytes) {
-    pixels = decode(rawBytes);
-    console.log(pixels);
-    myArr = splitter(rawBytes);
-    if (pixels) {
-        paint(canvas, pixels);
-        data.removeAttribute("style");
-    } else {
-        data.style.backgroundColor = "red";
+    ByteArr = splitter(rawBytes);    
+    for (const pixelBytes of ByteArr){
+        pixels = decode(pixelBytes);
+        console.log(pixels);
+        if (pixels) {
+            paint(canvas, pixels);
+            data.removeAttribute("style");
+        } else {
+            data.style.backgroundColor = "red";
+        }
     }
 }
 
