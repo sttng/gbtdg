@@ -80,3 +80,15 @@ function paint(canvas, pixels) {
         }
     }
 }
+
+function createCanvas(div_id, canvas_name) {
+    var canvas = document.createElement(canvas_name);
+    div = document.getElementById(div_id); 
+    canvas.id     = canvas_name;
+    canvas.width  = 120;
+    canvas.height = 120;
+    canvas.style.zIndex   = 8;
+    canvas.style.position = "absolute";
+    canvas.style.border   = "1px solid";
+    div.appendChild(canvas)
+}
