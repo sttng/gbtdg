@@ -22,6 +22,7 @@ window.onload = function() {
 function refresh(canvas, rawBytes) {
     pixels = decode(rawBytes);
     console.log(pixels);
+    myArr = splitter(rawBytes);
     if (pixels) {
         paint(canvas, pixels);
         data.removeAttribute("style");
@@ -30,10 +31,20 @@ function refresh(canvas, rawBytes) {
     }
 }
 
+function splitter(rawBytes) {
+    var bytes = rawBytes.replace(/\$|,|DB |,|0x| /g, "");
+    var bytes2 = bytes.replace(/[\r\n]+/g, "");
+    console.log(bytes2.length);
+    if (bytes2.length % 32 != 0) return false;
+    
+    var rawBytesArr = bytes.split("\n");
+    console.log(rawBytesArr);
+    return rawBytesArr;
+}
+
 function decode(rawBytes) {
     var bytes = rawBytes.replace(/\$|,|DB |,|0x| /g, "");
     bytes = bytes.replace(/[\r\n]+/g, "");
-    console.log(bytes.length);
     if (bytes.length % 32 != 0) return false;
     
     var byteArray = new Array(16);
