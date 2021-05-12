@@ -1,6 +1,6 @@
 window.onload = function() {
-    width = 4;
-    height = 4;
+    width = 8;
+    height = 8;
     square_width = document.getElementById("demo_canvas").width / (width);
     square_height = document.getElementById("demo_canvas").height / (height);
 
