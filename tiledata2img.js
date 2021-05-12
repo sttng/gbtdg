@@ -4,7 +4,7 @@ window.onload = function() {
     square_width = document.getElementById("demo_canvas").width / (width);
     square_height = document.getElementById("demo_canvas").height / (height);
 
-    colors = new Array("#ffffff", "#aaaaaa", "#555555", "#000000");
+    colors = new Array("#e0f8cf", "#86c06c", "#306850", "#071821");
 
     var canvas = document.getElementById("demo_canvas");
 
