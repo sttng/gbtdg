@@ -20,8 +20,10 @@ window.onload = function() {
 }
 
 function refresh(canvas, rawBytes) {
-    ByteArr = splitter(rawBytes);    
+    ByteArr = splitter(rawBytes);
+    i = 1;
     for (const pixelBytes of ByteArr){
+        i = i+1;
         setTimeout(function(){
             pixels = decode(pixelBytes);
             console.log(pixels);
@@ -31,7 +33,7 @@ function refresh(canvas, rawBytes) {
             } else {
                 data.style.backgroundColor = "red";
             }
-        },5000);
+        },i * 5000);
     }
 }
 
