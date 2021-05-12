@@ -30,7 +30,9 @@ function refresh(canvas, rawBytes) {
         } else {
             data.style.backgroundColor = "red";
         }
-        sleep(5000);
+        setTimeout(function(){
+    console.log("I am the third log after 5 seconds");
+},5000);
     }
 }
 
