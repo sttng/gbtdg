@@ -874,7 +874,8 @@ function generateOutput() {
 				output_buffer += o_line_begin;
 
 				for(var i = 0; i < actual_mapData_length; i++) {
-					output_buffer += generateHex(actual_mapData[i], o_hex_prefix);
+					//output_buffer += generateHex(actual_mapData[i], o_hex_prefix);
+					output_buffer += generateHex(actual_mapData[i] + o_shift_map, o_hex_prefix);
 
 					if(i !== (actual_mapData_length - 1)) {
 						if((i + 1) % 16 !== 0) {
