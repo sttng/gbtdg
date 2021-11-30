@@ -1,9 +1,10 @@
 
 /* -----------------------------------------------------------------------------
  * Gameboy Tile Data Generator
- * gbtdg.js v1.3.1
- * 2014 Chris Antonellis
- *
+ * gbtdg.js v1.3.1a
+ * Original 2014 Chris Antonellis
+ * Mod 2021 sttng
+ * 
  * GameBoy Tile Data Generator is a HTML5 / JS web application that will convert
  * bitmap images to hexidecimal data appropriate for use in tile based
  * graphical applications, specifically Nintendo Gameboy (DMG) software.
@@ -31,7 +32,7 @@ var max_map_length = 256;
 var tile_pw = 8;
 var tile_ph = 8;
 var canvas_width = 160;
-var canvas_height	= 144;
+var canvas_height = 144;
 
 // GBTDG
 var advanced_options_text_show = "Show Advanced Options";
@@ -979,7 +980,7 @@ function getOptionsValues() {
 	o_pad_map_h = parseInt($("input#pad-map-height").val());
 	o_pad_map_v = $("input#pad-map-value").val().toString();
 	//Added
-	o_shift_map = parseInt($("input#map-shift").val());
+	o_shift_map = $("input#map-shift").val().toString();
 }
 
 /** ----------------------------------------------------------------------------
