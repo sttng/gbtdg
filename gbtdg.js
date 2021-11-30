@@ -982,7 +982,7 @@ function getOptionsValues() {
 	o_pad_map_h = parseInt($("input#pad-map-height").val());
 	o_pad_map_v = $("input#pad-map-value").val().toString();
 	//Added
-	o_shift_map = $("input#map-shift").val().toString();
+	o_shift_map = parseInt($("input#map-shift").val());
 }
 
 /** ----------------------------------------------------------------------------
