@@ -65,6 +65,8 @@ var o_tile_quan	= "checked";
 var o_pad_map = null;
 var o_asm_format = "checked";
 var o_c_format = null;
+// Added o_shift_map
+var o_shift_map = "0";
 
 var o_c_style = null;
 
@@ -976,6 +978,8 @@ function getOptionsValues() {
 	o_pad_map_w = parseInt($("input#pad-map-width").val());
 	o_pad_map_h = parseInt($("input#pad-map-height").val());
 	o_pad_map_v = $("input#pad-map-value").val().toString();
+	//Added
+	o_shift_map = parseInt($("input#map-shift").val());
 }
 
 /** ----------------------------------------------------------------------------
@@ -1015,6 +1019,8 @@ function loadOptionsValues() {
 	$("input#pad-map-width").val(o_pad_map_w);
 	$("input#pad-map-height").val(o_pad_map_h);
 	$("input#pad-map-value").val(o_pad_map_v);
+	// Added
+	$("input#map-shift").val(o_shift_map);
 }
 
 /* -----------------------------------------------------------------------------
