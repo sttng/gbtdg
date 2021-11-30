@@ -719,7 +719,8 @@ function generateMapData(_tileData) {
 	for(var i = 0; i < raw_tileData_length; i++) {
 		for(var j = 0; j < tileData_length; j++) {
 			if(tileData[i].join() === _tileData[j].join()) {
-				mapData.push(j + 2);
+				//mapData.push(j);
+				mapData.push(j + o_shift_map);
 			}
 		}
 	}
